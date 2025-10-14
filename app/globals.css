@@ -1,14 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #a0d8f1;
-  --foreground: #171717;
+  --background-light: linear-gradient(to bottom, #a0d8f1, #87ceeb, #ffffff);
+  --background-dark: linear-gradient(to bottom, #1a1a1a, #333333, #4d4d4d);
+  --foreground-light: #171717;
+  --foreground-dark: #f0f0f0;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(to bottom, #a0d8f1, #87ceeb, #ffffff);
   overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+  background: var(--background-light);
+  color: var(--foreground-light);
+}
+
+/* Dark mode class */
+body.dark {
+  background: var(--background-dark);
+  color: var(--foreground-dark);
 }
 
 /* --- Tailwind Custom Animations --- */

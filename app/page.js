@@ -1,42 +1,59 @@
+"use client"
+import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
-  const clouds = [
-    { top: "10%", w: "w-32", delay: "0s", duration: "25s" },
-    { top: "25%", w: "w-48", delay: "10s", duration: "35s" },
-    { top: "50%", w: "w-40", delay: "5s", duration: "30s" },
-  ];
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Toggle dark/light mode
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
 
   const birds = [
     { left: "10%", size: "w-16", delay: "0s" },
-    { left: "30%", size: "w-12", delay: "1s" },
-    { left: "60%", size: "w-20", delay: "2s" },
+    { left: "30%", size: "w-12", delay: "0.5s" },
+    { left: "60%", size: "w-20", delay: "1s" },
+    { left: "80%", size: "w-16", delay: "1.5s" },
   ];
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen p-5 text-center overflow-hidden">
-      
-      {/* Floating Clouds */}
-      {clouds.map((cloud, idx) => (
-        <img
-          key={idx}
-          src="/cloud.png"
-          alt="cloud"
-          className={`absolute animate-floatCloud ${cloud.w} opacity-60`}
-          style={{
-            top: cloud.top,
-            animationDelay: cloud.delay,
-            animationDuration: cloud.duration,
-          }}
-        />
-      ))}
+
+      {/* Transparent Navbar */}
+     <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-6 py-4 
+  bg-white/20 dark:bg-gray-900/20 backdrop-blur-md shadow-md z-50">
+
+        <div className="text-2xl transition-transform transform hover:scale-105 cursor-pointer font-bold font-mono text-gray-800 dark:text-gray-200">
+          Flappy Floppy
+        </div>
+
+        <div className="flex items-center space-x-6">
+          <Link href="/about" className="text-gray-80 transition-transform transform hover:scale-105 dark:text-gray-200 font-mono hover:text-yellow-400 transition">About</Link>
+          <Link href="/developers" className="text-gray-800 dark:text-gray-200 transition-transform transform hover:scale-105 font-mono hover:text-yellow-400 ">Developers</Link>
+          <Link href="/how-to-play" className="text-gray-800 dark:text-gray-200 transition-transform transform hover:scale-105 font-mono hover:text-yellow-400 ">How to Play</Link>
+
+          {/* Dark/Light Toggle */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded-full transition-transform transform hover:scale-105 cursor-pointer bg-gray-800 hover:bg-gray-700 text-white shadow-lg "
+          >
+            {darkMode ? <MdOutlineDarkMode className="w-6 h-6" /> : <MdDarkMode className="w-6 h-6" />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Spacer to avoid overlapping navbar */}
+      <div className="h-24"></div>
 
       {/* Title */}
       <h1 className="text-6xl font-extrabold text-yellow-400 drop-shadow-lg mb-3">
         Flappy Floppy!
       </h1>
 
-      <p className="mt-4 text-xl text-gray-800 max-w-xl drop-shadow-md">
+      <p className="mt-4 text-xl max-w-xl drop-shadow-md">
         Play Flappy Bird directly on your computer! Download it or check out the code on GitHub.
       </p>
 
