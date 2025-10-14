@@ -12,6 +12,8 @@ body {
 }
 
 /* --- Tailwind Custom Animations --- */
+
+/* Slow vertical bounce (birds) */
 @keyframes bounceSlow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
@@ -20,10 +22,13 @@ body {
   animation: bounceSlow 3s infinite;
 }
 
+/* Clouds float left → right smoothly */
 @keyframes floatCloud {
   0% { transform: translateX(-200px); }
   100% { transform: translateX(100vw); }
 }
 .animate-floatCloud {
-  animation: floatCloud linear infinite;
+  animation-name: floatCloud;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
