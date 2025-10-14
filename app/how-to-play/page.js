@@ -13,27 +13,28 @@ export default function HowToPlay() {
   }, [darkMode]);
 
   const steps = [
-    {
-      title: "Install Java",
-      description: "Make sure you have the latest version of Java installed on your system.",
-    },
-    {
-      title: "Download the Game",
-      description: "Download the FlappyBird.jar file from the homepage or GitHub.",
-    },
-    {
-      title: "Open the Folder",
-      description: "Locate the downloaded JAR file and open its folder in your file explorer.",
-    },
-    {
-      title: "Navigate in CMD",
-      description: "Open Command Prompt and navigate to the folder containing FlappyBird.jar.",
-    },
-    {
-      title: "List JAR Contents",
-      description: "Type the following command in CMD to view the contents:\n\njar tf FlappyBird.jar",
-    },
-  ];
+  {
+    title: "Check Java Installation",
+    description: "Check if the latest version of Java is installed on your system.\n\nCommand:\njava -version",
+  },
+  {
+    title: "Download the Game",
+    description: "Download the FlappyBird.jar file from the homepage or GitHub.",
+  },
+  {
+    title: "Open the Folder",
+    description: "Locate the downloaded JAR file and open its folder in your file explorer.",
+  },
+  {
+    title: "Navigate in CMD",
+    description: "Open Command Prompt and navigate to the folder containing FlappyBird.jar.",
+  },
+  {
+    title: "Run the Game",
+    description: "Type the following command in CMD to run the game:\n\njava -jat FlappyBird.java",
+  },
+];
+
 
   return (
     <div className="relative flex flex-col items-center justify-start min-h-screen p-5 text-center overflow-hidden
