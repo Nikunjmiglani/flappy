@@ -69,7 +69,7 @@ export default function HomePage() {
         </a>
 
         <a
-          href="/FlappyBird.jar.url"
+          href="/FlappyBird.jar"
           download
           className="px-8 py-3 bg-yellow-400 text-gray-900 font-bold rounded-full shadow-lg hover:bg-yellow-300 animate-bounce transition-transform transform hover:scale-105"
         >
