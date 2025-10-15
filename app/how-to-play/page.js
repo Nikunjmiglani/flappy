@@ -31,7 +31,7 @@ export default function HowToPlay() {
   },
   {
     title: "Run the Game",
-    description: "Type the following command in CMD to run the game:\n\njava -jat FlappyBird.java",
+    description: "Type the following command in CMD to run the game:\n\njava -jar FlappyBird.jar",
   },
 ];
 
